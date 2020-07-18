@@ -3,6 +3,9 @@
 <html>
       <!--The link, meta, title and style go inside head.-->
     <head>
+        <!-- This is for the viewport.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <!--Title for the browser tab.-->
         <title>
             Pixel Art Palette Survey
@@ -18,6 +21,8 @@
                 background-color: #cfa2d7;
                 font-family: 'Press Start 2P', cursive;
                 color: #4d9523;
+                /*16px is the entry point.*/
+                font-size: 16px;
             }
             
             /*Div containing the title and the description*/
@@ -29,14 +34,14 @@
 
             /*Main title of the webpage.*/
             #title {
-                font-size: 200%;
+                font-size: 3em;
                 text-shadow: 0px 0 #3b723c, 0 4px #3b723c, 
                 0px 0  #3b723c, 0 0px #3b723c;
             }
 
             /*The description of the webpage just under the main title.*/
             #description {
-                font-size: 100%;
+                font-size: 1.2em;
             }
 
             /*The form itself.*/
@@ -44,21 +49,21 @@
                 /*This creates a flex box with direction column.*/
                 display: flex;
                 flex-direction: column;
-                background-color: #9f3ca4;
-                font-size: 100%;
-                margin: 0% 10% 0% 10%;
+                background-color: #ccdff5;
+                font-size: 1em;
+                margin: 0% 25% 0% 25%;
                 border-style: solid;
-                border-color: #3b723c;
+                border-color: #4d9523;
                 border-width: 5px;
                 border-radius: 10px;
             }
             
             /*Test to see if a div including the description and the label
             itself is better to move it around.*/
-            .div-name-box {
+            .div-box {
                 /*The color is only for testing purposes*/
                 /*background-color: #fcc615;*/
-                font-size: 150%;
+                font-size: 1.2em;
                 margin: 5% 10% 5% 10%;
             }
             
@@ -67,12 +72,15 @@
                 width: 100%;           
                 height: 60%;
                 font-family: 'Press Start 2P', cursive;
-                color: #4d9523;
-                background-color: #cfa2d7;
+                color: #3b723c;
+                background-color: #6cc3ef;
                 border-color: #4d9523;
                 border-width: 3px;
                 border-radius: 10px;
             }
+
+            /*Cross or validation after fields*/
+            
 
         </style>
     </head>
@@ -85,14 +93,24 @@
         </div>
         <!--<Form containing all other items.-->
         <form id="survey-form">
-            <div class="div-name-box">
+            <!--Div for name input.-->
+            <div class="div-box">
             <label id="name-label">Name</label><br>
             <input class="label" id="name" name="name" type="text" 
             placeholder="Enter your name" required>
             </div>
-            <label id="email-label"></label>
-            <label id="number-label"></label>
-
+            <!--Div for email input.-->
+            <div class="div-box">
+            <label id="email-label">Email</label><br>
+            <input class="label" id="email" name="email" type="email"
+            placeholder="Enter your email" required>
+            </div>
+            <!--Div for the age input-->
+            <div class="div-box">
+            <label id="number-label">Age</label>
+            <input class="label" id="number" name="number" type="number" min="6" 
+            max="120" placeholder="Enter your age" required>
+            </div>    
 
         </form>
 
