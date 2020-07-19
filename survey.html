@@ -47,15 +47,13 @@
             /*The form itself.*/
             #survey-form {
                 /*This creates a flex box with direction column.*/
-                display: flex;
-                flex-direction: column;
                 background-color: #ccdff5;
                 font-size: 1em;
                 margin: 0% 25% 0% 25%;
                 border-style: solid;
-                border-color: #4d9523;
+                border-color: #3b723c;
                 border-width: 5px;
-                border-radius: 10px;
+                border-radius: 5px;
             }
             
             /*Test to see if a div including the description and the label
@@ -63,20 +61,32 @@
             .div-box {
                 /*The color is only for testing purposes*/
                 /*background-color: #fcc615;*/
-                font-size: 1.2em;
-                margin: 5% 10% 5% 10%;
+                display: block;
+                font-size: 1em;
+                margin: 5% 5% 5% 5%;
+                /*background-color: #cfa2d7;*/
+            }
+            
+            /*Without this the placeholder text description in firefox will not
+            have the color I want. I need to reset the opacity.*/
+            ::-moz-placeholder {
+                opacity: 1;
             }
             
             /*This is the class that defines the text input boxes.*/
             .label {
-                width: 100%;           
-                height: 60%;
+                width: 100%;
+                height: auto;           
+                font-size: 0.8em;
                 font-family: 'Press Start 2P', cursive;
                 color: #3b723c;
                 background-color: #6cc3ef;
+                /*Thanks to this under, the input boxes will have the same width 
+                as the div, already with the custom borders.*/
+                box-sizing: border-box;
                 border-color: #4d9523;
-                border-width: 3px;
-                border-radius: 10px;
+                border-width: 5px;
+                border-radius: 5px;
             }
 
             /*Cross or validation after fields*/
@@ -95,13 +105,13 @@
         <form id="survey-form">
             <!--Div for name input.-->
             <div class="div-box">
-            <label id="name-label">Name</label><br>
+            <label id="name-label">Name</label>
             <input class="label" id="name" name="name" type="text" 
             placeholder="Enter your name" required>
             </div>
             <!--Div for email input.-->
             <div class="div-box">
-            <label id="email-label">Email</label><br>
+            <label id="email-label">Email</label>
             <input class="label" id="email" name="email" type="email"
             placeholder="Enter your email" required>
             </div>
@@ -110,6 +120,25 @@
             <label id="number-label">Age</label>
             <input class="label" id="number" name="number" type="number" min="6" 
             max="120" placeholder="Enter your age" required>
+            </div>
+            <!--For the dropdown retro console.-->
+            <div class="div-box">
+            <label for="consoles">Select your favourite video game retro console:
+            </label>
+            <select id="dropdown" name="consoles" class="label">
+                <option value="none">None</option>
+                <option value="atari2600">Atari 2600 - 1977</option>
+                <option value="magnavox">Magnavox Odyssey - 1978</option>
+                <option value="intellivision">Intillivision - 1980</option>
+                <option value="colecovision">ColecoVision - 1982</option>
+                <option value="atari5200">Atari 5200 - 1982</option>
+                <option value="nes">NES - 1983</option>
+                <option value="mastersystem">Master System - 1986</option>
+                <option value="turbografx">TurboGrafx-16 - 1987</option>
+                <option value="genesis">Sega Genesis - 1988</option>
+                <option value="snes">SNES - 1990</option>
+            </select>
+
             </div>    
 
         </form>
