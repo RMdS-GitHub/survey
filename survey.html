@@ -97,9 +97,19 @@
                 padding-bottom: 2%;
             }
 
+            /*Removes the double arrows in the input number box.*/
+            /*Chrom', Safari, Edge, Opera, Firefox.*/
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button,
+            input[type=number] {
+                -webkit-appearance: none;
+                margin: 0;
+                -moz-appearance: textfield;
+            }
+                
             /*These 3 classes under are needed to change the arrow from 
             the select, take into account different resolution*/
-            /*START for select arrow.*/
+            /*START CUSTOM for select arrow.*/
             .console {
               position: relative;
             }
@@ -109,7 +119,7 @@
                 -webkit-appearance: none;
                 -moz-appearance: none;
             }
-            .console:after {
+            .console::after {
                 position: absolute;
                 right: 3%;
                 top: 71%;
@@ -117,10 +127,72 @@
                 font-weight: 900;
                 content: "\f063";
             }
-            /*END for select arrow.*/
+            /*END CUSTOM for select arrow.*/
 
+            /*Customize the radio buttons.*/
+            /*START CUSTOM for radio buttons.*/
+            /*Customize label.*/
+            .check-box {
+                display: block;
+                position: relative;
+                /*The next two are to distance buttons from text description.*/
+                padding-left: 35px;
+                margin-bottom: 12px;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+             }
+            /*Hide browser's default radio button.*/
+            .check-box input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            /*Create custom radio button.*/
+            .checkspan {
+                position: absolute;
+                top: 0;
+                left: 0;
+                /*The next two are important so the button will be aligned 
+                horizontally with the text description.*/
+                height: 1em;
+                width: 1em;
+                background-color: #6cc3ef;
+                border-radius: 50%;
+            }
+            /*On mouse-over, add a different color.*/
+            .check-box:hover input ~ .checkspan {
+                background-color: #4d9523;
+            }
+            /*When the it's checked, the background becomes blue again.*/
+            .check-box input:checked ~ .checkspan {
+                background-color: #6cc3ef;
+            }
+            /*Create the indicator dot/circle, hidden when not checked.*/
+            .checkspan::after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+            /*Show the checkmark dot/circle when checked.*/
+            .check-box input:checked ~ .checkspan::after {
+                display: block;
+            }
 
-
+            /*Style the indicator dot/circle.*/
+            .check-box .checkspan::after {
+                top: 4px;
+                left: 4px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #3b723c;
+            }
+            /*END CUSTOM for radio button.*/
             
 
         </style>
@@ -136,27 +208,30 @@
         <form id="survey-form">
             <!--Div for name input.-->
             <div class="div-box">
-            <label id="name-label">Name</label>
+            <label id="name-label">Name
             <input class="label" id="name" name="name" type="text" 
             placeholder="Enter your name" required>
+            </label>
             </div>
             <!--Div for email input.-->
             <div class="div-box">
-            <label id="email-label">Email</label>
+            <label id="email-label">Email
             <input class="label" id="email" name="email" type="email"
             placeholder="Enter your email" required>
+            </label>
             </div>
             <!--Div for the age input-->
             <div class="div-box">
-            <label id="number-label">Age</label>
+            <label id="number-label">Age
             <input class="label" id="number" name="number" type="number" min="6" 
             max="120" placeholder="Enter your age" required>
+            </label>
             </div>
             <!--For the dropdown retro console.-->
             <div class="div-box console">
-            <label for="consoles">Select your favourite video game retro console:</label>
-            <select id="dropdown" name="consoles" class="label">
-                <option selected>Select in here</option>
+            <label for="consoles">Select your favourite video game retro console:
+            <select id="dropdown" name="consoles" class="label" required>
+                <option selected disabled>Select here</option>
                 <option value="none">None</option>
                 <option value="atari2600">Atari 2600 - 1977</option>
                 <option value="magnavox">Magnavox Odyssey - 1978</option>
@@ -169,9 +244,32 @@
                 <option value="genesis">Sega Genesis - 1988</option>
                 <option value="snes">SNES - 1990</option>
             </select>
-
-
+            </label>
             </div>    
+            <!--Div qestion for pixel art with radio buttons customized.-->
+            <div class="div-box">
+            <p>Do you like pixel art?</p>
+            <!--If the buttons share the same name only one selection is 
+            possible-->
+            <label class="check-box">
+                <input checked name="question" value="yes" type="radio"
+                class="radio-check">Yes
+                <span class="checkspan"></span>
+            </label>
+            <label class="check-box">   
+                <input name="question" value="no" type="radio"
+                class="radio-check">No
+                <span class="checkspan"></span>
+            </label>
+            <label class="check-box">    
+                <input name="question" value="What" type="radio"
+                class="radio-check">Pixel what?
+                <span class="checkspan"></span>
+            </label>
+            </div>
+            
+
+
 
         </form>
 
