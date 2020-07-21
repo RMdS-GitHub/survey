@@ -134,6 +134,8 @@
             /*Customize the radio buttons.*/
             /*START CUSTOM for radio buttons.*/
             /*Customize label.*/
+            /*.check-box and .check-box input classes will be used for the RADIO
+            and CHECKBOX buttons!!!*/
             .check-box {
                 display: block;
                 position: relative;
@@ -195,7 +197,59 @@
                 background: #3b723c;
             }
             /*END CUSTOM for radio button.*/
-            
+
+            /*START CUSTOM checkbox.*/
+            /*Create a custom checkbox*/
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 1em;
+                width: 1em;
+                background-color: #6cc3ef;
+            }
+
+            .one {
+                background-color: #666a66;
+            }
+            .two {
+                background-color: #d5cec5;
+            }
+            /*On mouse-over, add a background color*/
+            .check-box:hover input ~ .checkmark {
+                background-color: #4d9523;
+            }
+
+            /*This is for testing purpose since my checkboxes will have one
+            different color each one.*/
+            /*When the checkbox is checked, the background-color is this one.*/
+            /*.check-box input:checked ~ .checkmark {
+                background-color: #cfa2d7;
+            }*/
+            /*Create the checkmark/indicator, will be hidden when not checked.*/
+            .checkmark::after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+            /*Show the checkmark when checked.*/
+            .check-box input:checked ~ .checkmark::after {
+                display: block;
+            }
+            /*Style the checkmark/indicator.*/
+            .check-box .checkmark::after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border-style: solid;
+                border-color: #3b723c;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg); 
+            }
+           /*END CUSTOM checkbox.*/ 
 
         </style>
     </head>
@@ -248,27 +302,61 @@
             </select>
             </label>
             </div>    
-            <!--Div qestion for pixel art with radio buttons customized.-->
+            <!--Div question for pixel art with radio buttons customized.-->
             <div class="div-box">
-            <p>Do you like pixel art?</p>
-            <!--If the buttons share the same name only one selection is 
-            possible-->
-            <label class="check-box">
-                <input checked name="question" value="yes" type="radio"
-                class="radio-check">Yes
-                <span class="checkspan"></span>
-            </label>
-            <label class="check-box">   
-                <input name="question" value="no" type="radio"
-                class="radio-check">No
-                <span class="checkspan"></span>
-            </label>
-            <label class="check-box">    
-                <input name="question" value="What" type="radio"
-                class="radio-check">Pixel what?
-                <span class="checkspan"></span>
-            </label>
+                <p>Do you like pixel art?</p>
+                <!--If the buttons share the same name only one selection is 
+                possible-->
+                <label class="check-box">
+                    <input checked name="question" value="yes" type="radio">Yes
+                    <span class="checkspan"></span>
+                </label>
+                <label class="check-box">   
+                    <input name="question" value="no" type="radio">No
+                    <span class="checkspan"></span>
+                </label>
+                <label class="check-box">    
+                    <input name="question" value="What" type="radio">Pixel what?
+                    <span class="checkspan"></span>
+                </label>
             </div>
+            
+            <!--Div for the checkbox buttons-->    
+            <div class="div-box">
+                <p>Check all the colors that you like</p>
+                <!--For design purposes this div must have a backgorund color.-->
+                <div style="background-color: white;">
+                <label class="check-box" style="color: #666a66;">#666a66
+                    <input name="color" value="1" type="checkbox">
+                    <span class="checkmark one"></span>
+                </label>
+                <label class="check-box" style="color: #d5cec5">#d5cec5
+                    <input name="color" value="2" type="checkbox">
+                    <span class="checkmark two"></span>
+                </label>
+                <label class="check-box" style="color: #e2dfd1">#e2dfd1
+                    <input name="color" value="3" type="checkbox">
+                    <span class="checkmark three"></span>
+                </label>
+                <label class="check-box" style="color: #faceb4">#faceb4
+                    <input name="color" value="4" type="checkbox">
+                    <span class="checkmark four"></span>
+                </label>
+                <label class="check-box" style="color: #f9e6d6">#f9e6d6
+                    <input name="color" value="5" type="checkbox">
+                    <span class="checkmark five"></span>
+                </label>
+                <label class="check-box" style="color: #fcc615">#fcc615
+                    <input name="color" value="6" type="checkbox">
+                    <span class="checkmark six"></span>
+                </label>
+                <label class="check-box" style="color: #faf106">#faf106
+                    <input name="color" value="7" type="checkbox">
+                    <span class="checkmark seven"></span>
+                </label>
+                </div>
+           </div>
+         
             
 
 
