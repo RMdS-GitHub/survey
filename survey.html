@@ -26,7 +26,7 @@
             body {
                 background-color: #cfa2d7;
                 font-family: 'Press Start 2P', cursive;
-                color: #4d9523;
+                color: #3b723c;
                 /*16px is the entry point.*/
                 font-size: 16px;
             }
@@ -41,8 +41,8 @@
             /*Main title of the webpage.*/
             #title {
                 font-size: 3em;
-                text-shadow: 0px 0 #3b723c, 0 4px #3b723c, 
-                0px 0  #3b723c, 0 0px #3b723c;
+                text-shadow: 0px 0 #70c82c, 0 4px #70c82c, 
+                0px 0  #70c82c, 0 0px #70c82c;
             }
 
             /*The description of the webpage just under the main title.*/
@@ -90,7 +90,8 @@
                 /*Thanks to this under, the input boxes will have the same width 
                 as the div, already with the custom borders.*/
                 box-sizing: border-box;
-                border-color: #4d9523;
+                border-color: #3b723c;
+                border-style: solid;
                 border-width: 5px;
                 border-radius: 5px;
                 padding-top: 2%;
@@ -212,7 +213,7 @@
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: space-around;
+                justify-content: space-evenly;
                 font-size: 1em;
                 margin: 5% 5% 5% 5%;
                 background-color: white;
@@ -223,7 +224,7 @@
                 border-style: solid;
                 border-width: 5px;
             }
-            
+
             /*Create a custom checkbox*/
             .checkmark {
                 position: absolute;
@@ -307,6 +308,13 @@
             .twentyfour {
                 background-color: #fff7e3;
             }
+            /*The solution that I found to align the items of the last row of
+            the flex box to left, this takes the same size of a visible item,
+            Then I fill the space with an invisible item.*/  
+            i {
+                width: 147px;
+                height: 19.2px;
+            }
             /*On mouse-over, add a background color*/
             /*.check-box:hover input ~ .checkmark {
                 background-color: #4d9523;
@@ -343,6 +351,26 @@
             }
            /*END CUSTOM checkbox.*/ 
 
+        /*Submit button.*/
+        .div-box3 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5%;
+            }
+    
+        #submit {
+            font-family: 'Press Start 2P', cursive;
+            width: 80%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            font-size: 1em;
+            border-radius: 5px;
+            border-color: #3b733c;
+            border-style: solid;
+            border-width: 5px;
+            background-color: #70c82c;
+            color: #3b723c;
+        }
   
 
         </style>
@@ -517,16 +545,20 @@
                     <input name="color" value="24" type="checkbox">
                     <span class="checkmark twentyfour"></span>
                 </label>
+                <i aria-hidden="true"></i>
             </div>
             <!--Text area zone.-->
-            
             <div class="div-box">
                 <p>Don't hesitate to give me suggestions or comments!</p>
                <textarea class="label" id="textarea" name="coms" 
                 placeholder="Enter your comments here..." spellcheck="true"></textarea>
-
             </div>
-         
+            <!--Submit button-->
+            <div class="div-box3">
+                <button type="submit" id="submit" class="submmit-button">
+                    Submit
+                </button>
+            </div>
             
 
 
