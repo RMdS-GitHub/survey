@@ -99,6 +99,15 @@
                 margin-top: 2%;
             }
 
+            #textarea {
+                height: 10em;
+                font-size: 1em;
+                /*This removes the resize option.*/
+                resize:none;
+                /*This hides the scroolbar.*/
+                overflow: hidden;
+            }
+
             /*Removes the double arrows in the input number box.*/
             /*Chrom', Safari, Edge, Opera, Firefox.*/
             input::-webkit-outer-spin-button,
@@ -199,6 +208,22 @@
             /*END CUSTOM for radio button.*/
 
             /*START CUSTOM checkbox.*/
+            .div-box2 {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                font-size: 1em;
+                margin: 5% 5% 5% 5%;
+                background-color: white;
+                padding-bottom: 0%;
+                padding-top: 4%;
+                border-radius: 5px;
+                border-color: #3b723c;
+                border-style: solid;
+                border-width: 5px;
+            }
+            
             /*Create a custom checkbox*/
             .checkmark {
                 position: absolute;
@@ -209,16 +234,83 @@
                 background-color: #6cc3ef;
             }
 
+            /*Custom background colors for each checkbox.*/
             .one {
                 background-color: #666a66;
             }
             .two {
                 background-color: #d5cec5;
             }
-            /*On mouse-over, add a background color*/
-            .check-box:hover input ~ .checkmark {
+            .three {
+                background-color: #e2dfd1;
+            }
+            .four {
+                background-color: #faceb4;
+            }
+            .five {
+                background-color: #f9e6d6;
+            }
+            .six {
+                background-color: #fcc615;
+            }
+            .seven {
+                background-color: #faf106;
+            }
+            .eight {
+                background-color: #3b723c;
+            }
+            .nine {
                 background-color: #4d9523;
             }
+            .ten {
+                background-color: #70c82c;
+            }
+            .eleven {
+                background-color: #dc1c30;
+            }
+            .twelve {
+                background-color: #ab086f;
+            }
+            .thirteen {
+                background-color: #9f3ca4;
+            }
+            .fourteen {
+                background-color: #cfa2d7;
+            }
+            .fifteen {
+                background-color: #4a597f;
+            }
+            .sixteen {
+                background-color: #1563a9;
+            }
+            .seventeen {
+                background-color: #6cc3ef;
+            }
+            .eighteen {
+                background-color: #ccdff5;
+            }
+            .nineteen {
+                background-color: #40afb2;
+            }
+            .twenty {
+                background-color: #725c4b;
+            }
+            .twentyone {
+                background-color: #d29868 ;
+            }
+            .twentytwo {
+                background-color: #dabe85;
+            }
+            .twentythree {
+                background-color: #e8e7bc;
+            }
+            .twentyfour {
+                background-color: #fff7e3;
+            }
+            /*On mouse-over, add a background color*/
+            /*.check-box:hover input ~ .checkmark {
+                background-color: #4d9523;
+            }*/
 
             /*This is for testing purpose since my checkboxes will have one
             different color each one.*/
@@ -250,6 +342,8 @@
                 transform: rotate(45deg); 
             }
            /*END CUSTOM checkbox.*/ 
+
+  
 
         </style>
     </head>
@@ -321,11 +415,12 @@
                 </label>
             </div>
             
-            <!--Div for the checkbox buttons-->    
-            <div class="div-box">
-                <p>Check all the colors that you like</p>
-                <!--For design purposes this div must have a backgorund color.-->
-                <div style="background-color: white;">
+           
+                <!--Paragraph before check box choice.-->
+                <p style="margin-left: 5%;">Check all the colors that you like:
+                </p>
+             <!--Div for the checkbox buttons-->        
+            <div class="div-box2">
                 <label class="check-box" style="color: #666a66;">#666a66
                     <input name="color" value="1" type="checkbox">
                     <span class="checkmark one"></span>
@@ -354,8 +449,83 @@
                     <input name="color" value="7" type="checkbox">
                     <span class="checkmark seven"></span>
                 </label>
-                </div>
-           </div>
+                <label class="check-box" style="color: #3b723c">#3b723c
+                    <input name="color" value="8" type="checkbox">
+                    <span class="checkmark eight"></span>
+                </label>
+                <label class="check-box" style="color: #4d9523">#4d9523
+                    <input name="color" value="9" type="checkbox">
+                    <span class="checkmark nine"></span>
+                </label>
+                <label class="check-box" style="color: #70c82c">#70c82c
+                    <input name="color" value="10" type="checkbox">
+                    <span class="checkmark ten"></span>
+                </label>
+                <label class="check-box" style="color: #dc1c30">#dc1c30
+                    <input name="color" value="11" type="checkbox">
+                    <span class="checkmark eleven"></span>
+                </label>
+                <label class="check-box" style="color: #ab086f">#ab086f
+                    <input name="color" value="12" type="checkbox">
+                    <span class="checkmark twelve"></span>
+                </label>
+                <label class="check-box" style="color: #9f3ca4">#9f3ca4
+                    <input name="color" value="13" type="checkbox">
+                    <span class="checkmark thirteen"></span>
+                </label>
+                <label class="check-box" style="color: #cfa2d7">#cfa2d7
+                    <input name="color" value="14" type="checkbox">
+                    <span class="checkmark fourteen"></span>
+                </label>
+                <label class="check-box" style="color: #4a597f">#4a597f
+                    <input name="color" value="15" type="checkbox">
+                    <span class="checkmark fifteen"></span>
+                </label>
+                <label class="check-box" style="color: #1563a9">#1563a9
+                    <input name="color" value="16" type="checkbox">
+                    <span class="checkmark sixteen"></span>
+                </label>
+                <label class="check-box" style="color: #6cc3ef">#6cc3ef
+                    <input name="color" value="17" type="checkbox">
+                    <span class="checkmark seventeen"></span>
+                </label>
+                <label class="check-box" style="color: #ccdff5">#ccdff5
+                    <input name="color" value="18" type="checkbox">
+                    <span class="checkmark eighteen"></span>
+                </label>
+                <label class="check-box" style="color: #40afb2">#40afb2
+                    <input name="color" value="19" type="checkbox">
+                    <span class="checkmark nineteen"></span>
+                </label>
+                <label class="check-box" style="color: #725c4b">#725c4b
+                    <input name="color" value="20" type="checkbox">
+                    <span class="checkmark twenty"></span>
+                </label>
+                <label class="check-box" style="color: #d29868">#d29868
+                    <input name="color" value="21" type="checkbox">
+                    <span class="checkmark twentyone"></span>
+                </label>
+                <label class="check-box" style="color: #dabe85">#dabe85
+                    <input name="color" value="22" type="checkbox">
+                    <span class="checkmark twentytwo"></span>
+                </label>
+                <label class="check-box" style="color: #e8e7bc">#e8e7bc
+                    <input name="color" value="23" type="checkbox">
+                    <span class="checkmark twentythree"></span>
+                </label>
+                <label class="check-box" style="color: #fff7e3">#fff7e3
+                    <input name="color" value="24" type="checkbox">
+                    <span class="checkmark twentyfour"></span>
+                </label>
+            </div>
+            <!--Text area zone.-->
+            
+            <div class="div-box">
+                <p>Don't hesitate to give me suggestions or comments!</p>
+               <textarea class="label" id="textarea" name="coms" 
+                placeholder="Enter your comments here..." spellcheck="true"></textarea>
+
+            </div>
          
             
 
