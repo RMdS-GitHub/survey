@@ -1,0 +1,416 @@
+/*CSS*/
+body {
+    background-color: #cfa2d7;
+    font-family: 'Press Start 2P', cursive;
+    color: #3b723c;
+    /*16px is the entry point.*/
+    font-size: 16px;
+}
+
+/*Div containing the title and the description*/
+#title_description {
+    /*top, right and left, bottom.*/
+    margin: 5% 5% 5% 5%;
+    text-align: center;
+}
+
+/*Main title of the webpage.*/
+#title {
+    font-size: 3em;
+    text-shadow: 0px 0 #70c82c, 0 4px #70c82c, 
+    0px 0  #70c82c, 0 0px #70c82c;
+}
+
+/*The description of the webpage just under the main title.*/
+#description {
+    font-size: 1.2em;
+}
+
+/*The form itself.*/
+#survey-form {
+    background-color: #ccdff5;
+    font-size: 1em;
+    margin: 0% 25% 0% 25%;
+    border-style: solid;
+    border-color: #3b723c;
+    border-width: 5px;
+    border-radius: 5px;
+}
+
+/*Div including the description and the label itself 
+to move it around.*/
+.div-box {
+    /*The color is only for testing purposes*/
+    /*background-color: #fcc615;*/
+    display: block;
+    font-size: 1em;
+    margin: 5% 5% 5% 5%;
+    /*background-color: #cfa2d7;*/
+}
+
+/*Without this the placeholder text description in firefox will not
+have the color I want. I need to reset the opacity.*/
+::-moz-placeholder {
+    opacity: 1;
+}
+/*To force color of placholder in other browsers.*/
+::-webkit-input-placeholder {
+    color:#3b723c;
+}
+:-ms-input-placeholder {
+    color:#3b723c;
+}
+::placeholder {
+    color: #3b723c;
+}
+
+/*This is the class that defines the text input boxes.*/
+.label {
+    width: 100%;
+    height: auto;           
+    font-size: 0.8em;
+    font-family: 'Press Start 2P', cursive;
+    color: #3b723c;
+    background-color: #6cc3ef;
+    /*Thanks to this under, the input boxes will have the same width 
+    as the div, already with the custom borders.*/
+    box-sizing: border-box;
+    border-color: #3b723c;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    /*Between the test description and the placeholder.*/
+    margin-top: 2%;
+}
+
+/*The box where user can leave comments and suggestions.*/
+#textarea {
+    height: 10em;
+    font-size: 1em;
+    /*This removes the resize option.*/
+    resize:none;
+    /*This hides the scroolbar.*/
+    overflow: hidden;
+}
+
+/*Removes the double arrows in the input number box.*/
+/*Chrom', Safari, Edge, Opera, Firefox.*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type=number] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+    
+/*CUSTOM ARROW FOR SELECT*/
+/*These 3 classes under are needed to change the arrow from 
+the select, take into account different resolution*/
+/*START CUSTOM for select arrow.*/
+.console {
+  position: relative;
+}
+.console select {
+    /*This 3 options made the arrow vanish.*/
+     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-left: 1%;
+}
+.console::after {
+    position: absolute;
+    right: 3%;
+    top: 71%;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f063";
+}
+/*END CUSTOM for select arrow.*/
+
+/*RADIO BUTTONS.*/
+/*START CUSTOM for radio buttons.*/
+/*Customize label.*/
+/*.check-box and .check-box input classes will be used for the RADIO
+and CHECKBOX buttons!!!*/
+.check-box {
+    display: block;
+    position: relative;
+    /*The next two are to distance buttons from text description.*/
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+/*Hide browser's default radio button.*/
+.check-box input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/*Create custom radio button.*/
+.checkspan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*The next two are important so the button will be aligned 
+    horizontally with the text description.*/
+    height: 1em;
+    width: 1em;
+    background-color: #6cc3ef;
+    border-radius: 50%;
+}
+/*On mouse-over, add a different color.*/
+.check-box:hover input ~ .checkspan {
+    background-color: #4d9523;
+}
+/*When the it's checked, the background becomes blue again.*/
+.check-box input:checked ~ .checkspan {
+    background-color: #6cc3ef;
+}
+/*Create the indicator dot/circle, hidden when not checked.*/
+.checkspan::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/*Show the checkmark dot/circle when checked.*/
+.check-box input:checked ~ .checkspan::after {
+    display: block;
+}
+
+/*Style the indicator dot/circle.*/
+.check-box .checkspan::after {
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3b723c;
+}
+/*END CUSTOM for radio button.*/
+
+/*START CUSTOM checkbox.*/
+.div-box2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 1em;
+    margin: 2% 5% 5% 5%;
+    padding: 2% 2% 0% 2%;
+    background-color: white;
+    border-radius: 5px;
+    border-color: #3b723c;
+    border-style: solid;
+    border-width: 5px;
+}
+
+/*Create a custom checkbox*/
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    background-color: #6cc3ef;
+}
+
+/*Custom background colors for each checkbox.*/
+.one {
+    background-color: #666a66;
+}
+.two {
+    background-color: #d5cec5;
+}
+.three {
+    background-color: #e2dfd1;
+}
+.four {
+    background-color: #faceb4;
+}
+.five {
+    background-color: #f9e6d6;
+}
+.six {
+    background-color: #fcc615;
+}
+.seven {
+    background-color: #faf106;
+}
+.eight {
+    background-color: #3b723c;
+}
+.nine {
+    background-color: #4d9523;
+}
+.ten {
+    background-color: #70c82c;
+}
+.eleven {
+    background-color: #dc1c30;
+}
+.twelve {
+    background-color: #ab086f;
+}
+.thirteen {
+    background-color: #9f3ca4;
+}
+.fourteen {
+    background-color: #cfa2d7;
+}
+.fifteen {
+    background-color: #4a597f;
+}
+.sixteen {
+    background-color: #1563a9;
+}
+.seventeen {
+    background-color: #6cc3ef;
+}
+.eighteen {
+    background-color: #ccdff5;
+}
+.nineteen {
+    background-color: #40afb2;
+}
+.twenty {
+    background-color: #725c4b;
+}
+.twentyone {
+    background-color: #d29868 ;
+}
+.twentytwo {
+    background-color: #dabe85;
+}
+.twentythree {
+    background-color: #e8e7bc;
+}
+.twentyfour {
+    background-color: #fff7e3;
+}
+/*The solution that I found to align the items of the last row of
+the flex box to left, this takes the same size of a visible item,
+Then I fill the space with an invisible item.*/  
+i {
+    width: 147px;
+    height: 19.2px;
+}
+/*On mouse-over, add a background color*/
+/*.check-box:hover input ~ .checkmark {
+    background-color: #4d9523;
+}*/
+
+/*This is for testing purpose since my checkboxes will have one
+different color each one.*/
+/*When the checkbox is checked, the background-color is this one.*/
+/*.check-box input:checked ~ .checkmark {
+    background-color: #cfa2d7;
+}*/
+/*Create the checkmark/indicator, will be hidden when not checked.*/
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/*Show the checkmark when checked.*/
+.check-box input:checked ~ .checkmark::after {
+    display: block;
+}
+/*Style the checkmark/indicator.*/
+.check-box .checkmark::after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border-style: solid;
+    border-color: #3b723c;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); 
+}
+/*END CUSTOM checkbox.*/
+
+/*Paragraph from check box.*/
+#pcheck {
+    margin-left: 5%;
+    margin-bottom: 0;
+}
+
+/*Submit button.*/
+.div-box3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+#submit {
+    font-family: 'Press Start 2P', cursive;
+    width: 80%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 1em;
+    border-radius: 5px;
+    border-color: #3b733c;
+    border-style: solid;
+    border-width: 5px;
+    background-color: #70c82c;
+    color: #3b723c;
+}
+
+/*320 to 480*/
+@media screen 
+and (min-width: 320px)
+and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    #survey-form {
+        margin: 0% 0% 0% 0%;
+    }
+}
+
+/*480 to 812*/
+@media screen 
+and (min-width: 480px)
+and (max-width: 812px) {
+    #survey-form {
+        margin: 0% 15% 0% 15%;
+    }
+
+}
+
+/*812 to 1024*/
+@media screen 
+and (min-width: 812px)
+and (max-width: 1024px) {
+    #survey-form {
+        margin: 0% 15% 0% 15%;
+    }
+
+}
+
+/*1024 to 1280*/
+@media screen 
+and (min-width: 1280px)
+and (max-width: 1920px) {
+    #survey-form {
+        margin: 0% 15% 0% 15%;
+    }
+}
+
+/*1280 to 1920*/
+@media screen 
+and (min-width: 1280px)
+and (max-width: 1920px) {
+    #survey-form {
+        margin: 0% 25% 0% 25%;
+    }
+}
