@@ -52,7 +52,6 @@
 
             /*The form itself.*/
             #survey-form {
-                /*This creates a flex box with direction column.*/
                 background-color: #ccdff5;
                 font-size: 1em;
                 margin: 0% 25% 0% 25%;
@@ -62,8 +61,8 @@
                 border-radius: 5px;
             }
             
-            /*Test to see if a div including the description and the label
-            itself is better to move it around.*/
+            /*Div including the description and the label itself 
+            to move it around.*/
             .div-box {
                 /*The color is only for testing purposes*/
                 /*background-color: #fcc615;*/
@@ -97,9 +96,11 @@
                 padding-top: 2%;
                 padding-bottom: 2%;
                 padding-left: 2%;
+                /*Between the test description and the placeholder.*/
                 margin-top: 2%;
             }
 
+            /*The box where user can leave comments and suggestions.*/
             #textarea {
                 height: 10em;
                 font-size: 1em;
@@ -118,6 +119,7 @@
                 -moz-appearance: textfield;
             }
                 
+            /*CUSTOM ARROW FOR SELECT*/
             /*These 3 classes under are needed to change the arrow from 
             the select, take into account different resolution*/
             /*START CUSTOM for select arrow.*/
@@ -141,7 +143,7 @@
             }
             /*END CUSTOM for select arrow.*/
 
-            /*Customize the radio buttons.*/
+            /*RADIO BUTTONS.*/
             /*START CUSTOM for radio buttons.*/
             /*Customize label.*/
             /*.check-box and .check-box input classes will be used for the RADIO
@@ -215,10 +217,9 @@
                 flex-wrap: wrap;
                 justify-content: space-evenly;
                 font-size: 1em;
-                margin: 5% 5% 5% 5%;
+                margin: 2% 5% 5% 5%;
+                padding: 2% 2% 0% 2%;
                 background-color: white;
-                padding-bottom: 0%;
-                padding-top: 4%;
                 border-radius: 5px;
                 border-color: #3b723c;
                 border-style: solid;
@@ -349,80 +350,86 @@
                 -ms-transform: rotate(45deg);
                 transform: rotate(45deg); 
             }
-           /*END CUSTOM checkbox.*/ 
+            /*END CUSTOM checkbox.*/
+            
+            /*Paragraph from check box.*/
+            #pcheck {
+                margin-left: 5%;
+                margin-bottom: 0;
+            }
 
-        /*Submit button.*/
-        .div-box3 {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 5%;
+            /*Submit button.*/
+            .div-box3 {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 5%;
             }
     
-        #submit {
-            font-family: 'Press Start 2P', cursive;
-            width: 80%;
-            padding-top: 2%;
-            padding-bottom: 2%;
-            font-size: 1em;
-            border-radius: 5px;
-            border-color: #3b733c;
-            border-style: solid;
-            border-width: 5px;
-            background-color: #70c82c;
-            color: #3b723c;
-        }
-  
-
-        </style>
-    </head>
+            #submit {
+                font-family: 'Press Start 2P', cursive;
+                width: 80%;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                font-size: 1em;
+                border-radius: 5px;
+                border-color: #3b733c;
+                border-style: solid;
+                border-width: 5px;
+                background-color: #70c82c;
+                color: #3b723c;
+            }
+ </style>
+    
+</head>
     <body>
         <!--Div containing title and description.-->
         <div id="title_description">
-        <h1 id="title">Pixel Art Palette Survey</h1>
-        <p id="description">Please help me create the perfect palette for my 
-        pixel art!</p>
+            <h1 id="title">Pixel Art Palette Survey</h1>
+            <p id="description">Please help me create the perfect palette for my 
+            pixel art!</p>
         </div>
         <!--<Form containing all other items.-->
         <form id="survey-form">
             <!--Div for name input.-->
             <div class="div-box">
-            <label id="name-label">Name
-            <input class="label" id="name" name="name" type="text" 
-            placeholder="Enter your name" required>
-            </label>
+                <label id="name-label">Name
+                    <span id="test"><input class="label" id="name" name="name" 
+                    type="text" placeholder="Enter your name" required>
+                    </span>
+                </label>
             </div>
             <!--Div for email input.-->
             <div class="div-box">
-            <label id="email-label">Email
-            <input class="label" id="email" name="email" type="email"
-            placeholder="Enter your email" required>
-            </label>
+                <label id="email-label">Email
+                    <input class="label" id="email" name="email" type="email"
+                    placeholder="Enter your email" required>
+                </label> 
             </div>
             <!--Div for the age input-->
             <div class="div-box">
-            <label id="number-label">Age
-            <input class="label" id="number" name="number" type="number" min="6" 
-            max="120" placeholder="Enter your age" required>
-            </label>
+                <label id="number-label">Age
+                    <input class="label" id="number" name="number" type="number" 
+                    min="6" max="120" placeholder="Enter your age" required>
+                </label>
             </div>
             <!--For the dropdown retro console.-->
             <div class="div-box console">
-            <label for="consoles">Select your favourite video game retro console:
-            <select id="dropdown" name="consoles" class="label" required>
-                <option selected disabled>Select here</option>
-                <option value="none">None</option>
-                <option value="atari2600">Atari 2600 - 1977</option>
-                <option value="magnavox">Magnavox Odyssey - 1978</option>
-                <option value="intellivision">Intillivision - 1980</option>
-                <option value="colecovision">ColecoVision - 1982</option>
-                <option value="atari5200">Atari 5200 - 1982</option>
-                <option value="nes">NES - 1983</option>
-                <option value="mastersystem">Master System - 1986</option>
-                <option value="turbografx">TurboGrafx-16 - 1987</option>
-                <option value="genesis">Sega Genesis - 1988</option>
-                <option value="snes">SNES - 1990</option>
-            </select>
-            </label>
+                <label for="consoles">Select your favourite video game retro console:
+                    <select id="dropdown" name="consoles" class="label" required>
+                        <option selected disabled>Select here</option>
+                        <option value="none">None</option>
+                        <option value="atari2600">Atari 2600 - 1977</option>
+                        <option value="magnavox">Magnavox Odyssey - 1978</option>
+                        <option value="intellivision">Intillivision - 1980</option>
+                        <option value="colecovision">ColecoVision - 1982</option>
+                        <option value="atari5200">Atari 5200 - 1982</option>
+                        <option value="nes">NES - 1983</option>
+                        <option value="mastersystem">Master System - 1986</option>
+                        <option value="turbografx">TurboGrafx-16 - 1987</option>
+                        <option value="genesis">Sega Genesis - 1988</option>
+                        <option value="snes">SNES - 1990</option>
+                    </select>
+                </label>
             </div>    
             <!--Div question for pixel art with radio buttons customized.-->
             <div class="div-box">
@@ -442,13 +449,11 @@
                     <span class="checkspan"></span>
                 </label>
             </div>
-            
-           
-                <!--Paragraph before check box choice.-->
-                <p style="margin-left: 5%;">Check all the colors that you like:
+            <!--Paragraph before check box choice.-->
+                <p id="pcheck">Check all the colors that you like:
                 </p>
              <!--Div for the checkbox buttons-->        
-            <div class="div-box2">
+             <div class="div-box2">
                 <label class="check-box" style="color: #666a66;">#666a66
                     <input name="color" value="1" type="checkbox">
                     <span class="checkmark one"></span>
@@ -549,9 +554,11 @@
             </div>
             <!--Text area zone.-->
             <div class="div-box">
-                <p>Don't hesitate to give me suggestions or comments!</p>
-               <textarea class="label" id="textarea" name="coms" 
-                placeholder="Enter your comments here..." spellcheck="true"></textarea>
+                <label>Don't hesitate to give me suggestions or comments!
+                <textarea class="label" id="textarea" name="coms" 
+                    placeholder="Enter your comments here..." spellcheck="true">
+                </textarea>
+                </label>
             </div>
             <!--Submit button-->
             <div class="div-box3">
@@ -559,11 +566,6 @@
                     Submit
                 </button>
             </div>
-            
-
-
-
         </form>
-
     </body>
 </html>
