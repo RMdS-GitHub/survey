@@ -105,13 +105,15 @@ input[type=number] {
     -moz-appearance: textfield;
 }
     
+/*After closely examination I decided to remove this. Changing resolutions 
+did mess up with this idea I add.*/
 /*CUSTOM ARROW FOR SELECT*/
 /*These 3 classes under are needed to change the arrow from 
 the select, take into account different resolution*/
 /*START CUSTOM for select arrow.*/
-.console {
+/*.console {
   position: relative;
-}
+}*/
 .console select {
     /*This 3 options made the arrow vanish.*/
      appearance: none;
@@ -119,10 +121,10 @@ the select, take into account different resolution*/
     -moz-appearance: none;
     padding-left: 1%;
 }
-.console::after {
+/*.console::after {
     position: absolute;
-    right: 3%;
-    top: 71%;
+    right: 20px;
+    top: 55px;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f063";
@@ -366,6 +368,7 @@ different color each one.*/
 }
 
 /*320 to 480*/
+/*Galxy S5 custom OK.*/
 @media screen 
 and (min-width: 320px)
 and (max-width: 480px) {
@@ -374,6 +377,11 @@ and (max-width: 480px) {
     }
     #survey-form {
         margin: 0% 0% 0% 0%;
+    }
+    /*Style the indicator dot/circle.*/
+    .check-box .checkspan::after {
+    top: 3px;
+    left: 3px;
     }
 }
 
@@ -399,18 +407,19 @@ and (max-width: 1024px) {
 
 /*1024 to 1280*/
 @media screen 
-and (min-width: 1280px)
-and (max-width: 1920px) {
+and (min-width: 1024px)
+and (max-width: 1280px) {
     #survey-form {
         margin: 0% 15% 0% 15%;
     }
 }
 
 /*1280 to 1920*/
+/*Full HD Tv OK.*/
 @media screen 
 and (min-width: 1280px)
 and (max-width: 1920px) {
     #survey-form {
-        margin: 0% 25% 0% 25%;
+        margin: 0% 20% 0% 20%;
     }
 }
